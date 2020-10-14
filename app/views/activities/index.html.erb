@@ -1,7 +1,9 @@
+<%= button_to "Create New Signup", new_signup_path, method: :get %>
+
 <h1>All The Activities</h1>
 
 <ul>
   <% @activities.each do |activity| %>
-    <li><%= activity.name %></li>
+    <li><%= link_to activity.name, activity_path(activity) %></li>
   <% end %>
 </ul>

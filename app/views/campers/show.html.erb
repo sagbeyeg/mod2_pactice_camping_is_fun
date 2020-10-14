@@ -1,0 +1,23 @@
+<h3><% flash.each do |type, msg| %>
+  <div class="alert alert-info">
+    <%= msg %>
+  </div>
+<% end %></h3>
+
+<h1>Camper Page</h1>
+
+<strong>Name:</strong>
+<%= @camper.name %><br><br>
+
+<strong>Age:</strong>
+<%= @camper.age %><br><br>
+
+<strong>Activities</strong>
+<% @camper.activities.each do |a| %>
+  <li><%=link_to a.name, activity_path(a) %> <br></li> 
+<% end %><br>
+
+<%= button_to "Create New Signup", new_signup_path, method: :get %>
+
+
+

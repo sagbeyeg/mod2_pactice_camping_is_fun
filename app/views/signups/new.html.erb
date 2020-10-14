@@ -1,0 +1,21 @@
+<h3><% flash.each do |type, msg| %>
+  <div class="alert alert-info">
+    <%= msg %>
+  </div>
+<% end %></h3>
+
+<h1>New Signup</h1>
+
+<%= form_for @signup do |f| %>
+  Camper:
+  <%= f.collection_select :camper_id, Camper.all, :id, :name %><br><br>
+
+  Activity:
+  <%= f.collection_select :activity_id, Activity.all, :id, :name %><br><br>
+
+  Time:
+  <%= f.number_field :time, in: 0..23 %><br><br>
+
+  <%= f.submit "Create New Signup" %>
+
+<% end %>

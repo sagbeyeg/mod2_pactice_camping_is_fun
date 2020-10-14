@@ -1,0 +1,18 @@
+<% flash.each do |type, msg| %>
+  <div class="alert alert-info">
+    <%= msg %>
+  </div>
+<% end %>
+
+<h1>New Camper</h1>
+
+<%= form_for @camper do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br><br>
+
+  <%= f.label :age %>:
+  <%= f.text_field :age %><br><br>
+
+  <%= f.submit "Create Camper" %>
+
+<% end %>
